@@ -16,13 +16,11 @@ set(INC_DIR
 # add them
 include_directories(${INC_DIR} ${INCLUDE_DIRS})
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DTF_LITE_STATIC_MEMORY")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DTF_LITE_STATIC_MEMORY")
-
 # create our target
 add_library(codal-tensorflow ${TOP_LEVEL_SOURCE} ${TOP_LEVEL_SOURCE0} ${TOP_LEVEL_SOURCE1})
 
 target_link_libraries(codal-tensorflow codal-core ${OBJECT_FILES} ${ARCHIVE_FILES})
 
 # expose it to parent cmake.
+target_compile_options(codal-tensorflow PUBLIC "-DTF_LITE_STATIC_MEMORY")
 target_include_directories(codal-tensorflow PUBLIC ${INC_DIR} ${INCLUDE_DIRS})
