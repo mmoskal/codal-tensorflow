@@ -12,6 +12,8 @@ set(INC_DIR
     "${CMAKE_CURRENT_SOURCE_DIR}/third_party/gemmlowp"
     "${CMAKE_CURRENT_SOURCE_DIR}/third_party/flatbuffers/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/third_party/ruy"
+    "${CMAKE_CURRENT_SOURCE_DIR}/tensorflow/lite/micro/tools/make/downloads"
+    "${CMAKE_CURRENT_SOURCE_DIR}/tensorflow/lite/micro/tools/make/downloads/cmsis/CMSIS/DSP/Include"
 )
 # add them
 include_directories(${INC_DIR} ${INCLUDE_DIRS})

@@ -8,7 +8,7 @@ set -x
 set -e
 HERE=$(pwd)
 TF="$1"
-(cd "$TF" && gmake -f tensorflow/lite/micro/tools/make/Makefile  generate_hello_world_make_project)
+(cd "$TF" && gmake -f tensorflow/lite/micro/tools/make/Makefile TAGS=cmsis-nn generate_hello_world_make_project)
 rm -rf tensorflow third_party hello_world
 SRC=`ls -d $TF/tensorflow/lite/micro/tools/make/gen/*/prj/hello_world/make | head -1`
 cp -r "$SRC"/tensorflow/ .
